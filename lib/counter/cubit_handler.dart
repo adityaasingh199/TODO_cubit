@@ -1,4 +1,4 @@
-import 'package:cubit_notes/state_page.dart';
+import 'package:cubit_notes/counter/state_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class cubitHandler extends Cubit<stateCubit>{

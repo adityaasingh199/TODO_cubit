@@ -1,5 +1,6 @@
-import 'package:cubit_notes/cubit_handler.dart';
-import 'package:cubit_notes/list_cubit.dart';
+import 'package:cubit_notes/counter/cubit_handler.dart';
+import 'package:cubit_notes/list/list_cubit.dart';
+import 'package:cubit_notes/model/model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -128,14 +129,17 @@ class inputPageState extends State<inputPage> {
                     if (nTitleController.text.isNotEmpty &&
                         nDescController.text.isNotEmpty) {
                       if (widget.index == -1) {
-                        context.read<listCubit>().addValue({
+
+                        context.read<listCubit>().addNotes(noteModel(nTitle: nTitleController.text, nDesc: nDescController.text,isCompleted: false));
+
+                        /*context.read<listCubit>().addValue({
                           "title" : nTitleController.text,
                           "desc" : nDescController.text
-                        });
+                        });*/
                         Navigator.pop(context);
                       } else {
-                        context.read<listCubit>().udateValue(index:widget.index, ntitle: nTitleController.text, ndesc: nDescController.text);
-                        Navigator.pop(context);
+                        /*context.read<listCubit>().udateValue(index:widget.index, ntitle: nTitleController.text, ndesc: nDescController.text);
+                        Navigator.pop(context);*/
                       }
                     }
                   },

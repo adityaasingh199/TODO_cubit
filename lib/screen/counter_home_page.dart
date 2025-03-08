@@ -1,5 +1,5 @@
-import 'package:cubit_notes/cubit_handler.dart';
-import 'package:cubit_notes/state_page.dart';
+import 'package:cubit_notes/counter/cubit_handler.dart';
+import 'package:cubit_notes/counter/state_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

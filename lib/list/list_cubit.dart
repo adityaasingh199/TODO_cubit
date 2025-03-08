@@ -30,6 +30,22 @@ class listCubit extends Cubit<listState>{
     }
   }
 
+  void updateTodo({required id,required title,required desc})async{
+    bool check = await DbHelper.updateTodo(nId: id, nTitle: title, nDesc: desc);
+    if(check){
+      List<noteModel>allNotes = await DbHelper.fetchAllNotes();
+      emit(listState(mNotes: allNotes));
+    }
+  }
+
+  void deleteTodo({required id})async{
+    bool check = await DbHelper.deleteTodo(nId: id);
+    if(check){
+      List<noteModel>allNotes = await DbHelper.fetchAllNotes();
+      emit(listState(mNotes: allNotes));
+    }
+  }
+
 
 
 

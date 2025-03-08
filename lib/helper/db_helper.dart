@@ -49,6 +49,16 @@ class dbHelper{
     },where: "$COLUMN_ID=?",whereArgs: ["$nId"]);
     return rowsEffected>0;
   }
+  Future<bool>updateTodo({required nId,required nTitle,required nDesc})async{
+    Database db = await getDb();
+    int rowsEffected = await db.update(TABLE_NAME, {COLUMN_ID:nId,COLUMN_TITLE:nTitle,COLUMN_DESC:nDesc},where: "$COLUMN_ID=?",whereArgs: ["$nId"]);
+    return rowsEffected>0;
+  }
+  Future<bool>deleteTodo({required nId})async{
+    Database db = await getDb();
+    int rowsEffected = await db.delete(TABLE_NAME,where: "$COLUMN_ID=?",whereArgs: ["$nId"]);
+    return rowsEffected>0;
+  }
 
   Future<List<noteModel>> fetchAllNotes()async{
     var db = await getDb();

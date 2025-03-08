@@ -138,8 +138,9 @@ class inputPageState extends State<inputPage> {
                         });*/
                         Navigator.pop(context);
                       } else {
-                        /*context.read<listCubit>().udateValue(index:widget.index, ntitle: nTitleController.text, ndesc: nDescController.text);
-                        Navigator.pop(context);*/
+                        /*context.read<listCubit>().udateValue(index:widget.index, ntitle: nTitleController.text, ndesc: nDescController.text);*/
+                        context.read<listCubit>().updateTodo(id: widget.index, title: nTitleController.text, desc: nDescController.text);
+                        Navigator.pop(context);
                       }
                     }
                   },
